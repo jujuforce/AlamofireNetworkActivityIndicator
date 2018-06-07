@@ -22,9 +22,9 @@
 //  THE SOFTWARE.
 //
 
-import Alamofire
 import Foundation
 import UIKit
+import Alamofire
 
 /// The `NetworkActivityIndicatorManager` manages the state of the network activity indicator in the status bar. When
 /// enabled, it will listen for notifications indicating that a URL session task has started or completed and start
@@ -224,7 +224,7 @@ public class NetworkActivityIndicatorManager {
 
         DispatchQueue.main.async {
             RunLoop.main.add(timer, forMode: .commonModes)
-            RunLoop.main.add(timer, forMode: .UITrackingRunLoopMode)
+            RunLoop.main.add(timer, forMode: .tracking)
         }
 
         startDelayTimer = timer
@@ -241,7 +241,7 @@ public class NetworkActivityIndicatorManager {
 
         DispatchQueue.main.async {
             RunLoop.main.add(timer, forMode: .commonModes)
-            RunLoop.main.add(timer, forMode: .UITrackingRunLoopMode)
+            RunLoop.main.add(timer, forMode: .tracking)
         }
 
         completionDelayTimer = timer
